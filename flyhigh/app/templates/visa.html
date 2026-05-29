@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <title>Fly High-Study Abroad</title>
+    <link rel="icon" href="{% static 'images/hh.jpeg' %}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+	  <link rel="shortcut icon" href="#">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+  <body>
+	  <div class="bg-top navbar-light">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
+    			<div class="col-md-4 d-flex align-items-center py-4">
+    				<a class="navbar-brand" href="index.html">Fly High <span style="text-align: center;">Study Abroad</span></a>
+    			</div>
+	    		<div class="col-lg-8 d-block">
+		    		<div class="row d-flex">
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="text">
+					    		<span>Email</span>
+						    	<span>flyhighstudyabroad@email.com</span>
+						    </div>
+					    </div>
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <div class="text">
+						    	<span>Call</span>
+						    	<span>Call Us: + XXXXXXXX46</span>
+						    </div>
+					    </div>
+					    <div class="col-md topper d-flex align-items-center justify-content-end">    	<p class="mb-0">
+                <select id="navigation" name="navigation" onchange="location = this.value;"  class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                  <option value="" disabled selected>----Test----</option>
+                  <option value="{% url 'testdata' %}">Test Details</option>
+                  <option value="{% url 'examreg' %}">Exam Registration</option>
+                  <option value="{%url 'test_center'%}"><span>Test Center</span></option>
+                  <option value="{%url 'course_materials'%}"><span>Course materials</span></option>
+                </select>
+
+                  </p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	  
+        </form>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a href="{% url 'home' %}" class="nav-link pl-0">Home</a></li>
+            <li class="nav-item "><a href="{%url 'course' c.id %}" class="nav-link">Course</a></li>
+	        	<li class="nav-item active"><a href="{%url 'visa' c.id  %}" class="nav-link">Visa</a></li>
+	        	<li class="nav-item"><a href="{%url 'scholarship' c.id %}" class="nav-link">Scholarship</a></li>
+	        	<li class="nav-item"><a href="{%url 'acco' c.id %}" class="nav-link">Accomodation</a></li>
+	          <li class="nav-item"><a href="{%url 'job' c.id %}" class="nav-link">Job Vaccancy</a></li>
+            <li class="nav-item"><a href="{%url 'bankloan' c.id %}" class="nav-link">Bank Loan details</a></li>
+	        </ul>
+        
+            <!-- Logout button aligned to the right -->
+            <ul class="navbar-nav ml-auto">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+						<span class="nav-link">
+							<i class="fas fa-user"></i>  {{ user.username }}
+						</span>
+					</li>
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('{% static 'images/bg_1.jpg'%}');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">| Visa Application</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{%url 'home'%}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Visa <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+     <div class="visa">
+      <h1 style="text-align: center; margin-bottom: 82px; margin-top: 73px;"><u>Visa Application Form</u></h1>
+      <form method="POST" enctype="multipart/form-data" action="{% url 'visa' c.id %}" >
+        {% csrf_token %}
+        <table style="text-align: center; font-size: larger;">
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td>
+                    <input type="text" id="name" name="name" maxlength="200" required value="{{ data.name|default:'' }}">
+                    {% if errors.name %}
+                        <div style="color: red;">{{ errors.name }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="address">Address:</label></td>
+                <td>
+                    <textarea id="address" name="address" required>{{ data.address|default:'' }}</textarea>
+                    {% if errors.address %}
+                        <div style="color: red;">{{ errors.address }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="passport_number">Passport Number:</label></td>
+                <td>
+                    <input type="number" id="passport_number" name="passport_number" maxlength="200" required value="{{ data.passport_number|default:'' }}">
+                    {% if errors.passport_number %}
+                        <div style="color: red;">{{ errors.passport_number }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="contact_info">Contact Info:</label></td>
+                <td>
+                    <input type="number" id="contact_info" name="contact_info" maxlength="200" required value="{{ data.contact_info|default:'' }}">
+                    {% if errors.contact_info %}
+                        <div style="color: red;">{{ errors.contact_info }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nationality">Nationality:</label></td>
+                <td>
+                    <input type="text" id="nationality" name="nationality" maxlength="200" required value="{{ data.nationality|default:'' }}">
+                    {% if errors.nationality %}
+                        <div style="color: red;">{{ errors.nationality }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="date_of_birth">Date of Birth:</label></td>
+                <td>
+                    <input type="date" id="date_of_birth" name="date_of_birth" required value="{{ data.date_of_birth|default:'' }}">
+                    {% if errors.date_of_birth %}
+                        <div style="color: red;">{{ errors.date_of_birth }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="visa_type">Visa Type:</label></td>
+                <td>
+                    <input type="text" id="visa_type" name="visa_type" maxlength="100" required value="{{ data.visa_type|default:'' }}">
+                    {% if errors.visa_type %}
+                        <div style="color: red;">{{ errors.visa_type }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="passport_copy">Passport Copy:</label></td>
+                <td>
+                    <input type="file" id="passport_copy" name="passport_copy" required>
+                    {% if errors.passport_copy %}
+                        <div style="color: red;">{{ errors.passport_copy }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="financial_status">Financial Status:</label></td>
+                <td>
+                    <input type="file" id="financial_status" name="financial_status" required>
+                    {% if errors.financial_status %}
+                        <div style="color: red;">{{ errors.financial_status }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><label for="letter_of_acceptance">Letter of Acceptance:</label></td>
+                <td>
+                    <input type="file" id="letter_of_acceptance" name="letter_of_acceptance" required>
+                    {% if errors.letter_of_acceptance %}
+                        <div style="color: red;">{{ errors.letter_of_acceptance }}</div>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-4" style="margin-top: 50px;">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+     </div>
+      
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+                <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Fly high mavelikkara,allapuzha ,kerala,690XXX, india</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+XXXXXXX46</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">flyhighstudyabroad@email.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/blog1.jpeg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{%url 'blog2'%}">Study Abroad Information Session</p>
+					<div class="d-flex align-items-center mt-auto"></a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 25, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-5 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/blog2.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{%url 'blog2'%}">Virtual Study Abroad Fair </a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 20, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'home'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Home</a></li>
+                <li><a href="{%url 'about'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- About</a></li>
+                <li><a href="{%url 'testdata'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Test Data</a></li>
+                <li><a href="{%url 'test_center'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Test Center</a></li>
+				<li><a href="{%url 'batch'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Upcomming Batch</a></li>
+                <li><a href="{%url 'contact'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Contact</a></li>
+              </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">FlyHigh</h2>
+				<p>FlyHigh is your trusted partner for study abroad opportunities. We provide comprehensive information on educational programs, application processes, and scholarships to help you embark on your international education journey.</p>
+
+            </div>
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Copyright © 2024 FlyHigh Study Abroad Pvt Ltd, All rights reserved Website Design And Development – <i class="icon-heart" aria-hidden="true"></i> by S4 BCA GROUP-1</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+      
+    
+  
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  
+  
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js'%}"></script>
+    <script src="{% static 'js/scrollax.min.js'%}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+      
+    </body>
+  </html>

@@ -1,0 +1,95 @@
+/* custom.css */
+
+/* Body and overall background */
+body {
+    background-color: #f8f9fa; /* Light background for contrast */
+    font-family: 'Arial', sans-serif; /* Change font for a modern look */
+}
+
+/* Navbar styling */
+.navbar {
+    background: linear-gradient(90deg, #fd7e14, #f4b200); /* Gradient background */
+    color: white; /* Navbar text color */
+}
+
+/* Navbar links */
+.navbar a {
+    color: white; /* Change navbar link color */
+    font-weight: bold; /* Bold links for emphasis */
+}
+
+.navbar a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #343a40; /* Dark sidebar */
+}
+
+/* Sidebar links */
+.sidebar a {
+    color: #ffffff; /* White link color */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Sidebar link hover */
+.sidebar a:hover {
+    background-color: #fd7e14; /* Orange hover effect */
+    border-radius: 4px; /* Rounded corners for links */
+}
+
+/* Main content area */
+.main-content {
+    padding: 20px; /* Padding for the main content area */
+}
+
+/* Card styling */
+.card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff; /* Set form background to white */
+    padding: 20px; /* Padding for forms */
+    border-radius: 8px; /* Rounded corners for forms */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Input and button styling */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Padding inside inputs */
+    width: 100%; /* Full width */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+/* Input focus */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #fd7e14; /* Orange border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #fd7e14; /* Primary button color */
+    border-color: #fd7e14; /* Button border color */
+    color: white; /* Button text color */
+    border-radius: 4px; /* Rounded corners for buttons */
+}
+
+.btn-primary:hover {
+    background-color: #f4b200; /* Lighter shade on hover */
+    border-color: #f4b200; /* Lighter border on hover */
+}
+
+/* Additional responsive design *

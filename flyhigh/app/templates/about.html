@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+{%load static%}
+
+<html lang="en">
+  <head>
+    <title>Fly High-Study Abroad</title>
+    <link rel="icon" href="{% static 'images/hh.jpeg' %}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="shortcut icon" href="#">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{%static 'css/open-iconic-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/aos.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/ionicons.min.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/flaticon.css'%}">
+    <link rel="stylesheet" href="{%static 'css/icomoon.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+  </head>
+  <body>
+	  <div class="bg-top navbar-light">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
+    			<div class="col-md-4 d-flex align-items-center py-4">
+    				<a class="navbar-brand" href="index.html">Fly High <span style="text-align: center;">Study Abroad</span></a>
+    			</div>
+	    		<div class="col-lg-8 d-block">
+		    		<div class="row d-flex">
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="text">
+					    		<span>Email</span>
+						    	<span>flyhighstudyabroad@email.com</span>
+						    </div>
+					    </div>
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <div class="text">
+						    	<span>Call</span>
+						    	<span>Call Us: + XXXXXXX46</span>
+						    </div>
+					    </div>
+					    <div class="col-md topper d-flex align-items-center justify-content-end">    	<p class="mb-0">
+                <select id="navigation" name="navigation" onchange="location = this.value;"  class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                  <option value="" disabled selected>----Test----</option>
+                  <option value="{% url 'testdata' %}">Test Details</option>
+                  <option value="{% url 'examreg' %}">Exam Registration</option>
+                  <option value="{%url 'test_center'%}"><span>Test Center</span></option>
+                  <option value="{%url 'course_materials'%}"><span>Course materials</span></option>
+                </select>
+
+                  </p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	     
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a href="{% url 'home' %}" class="nav-link pl-0">Home</a>
+              </li>
+              <li class="nav-item active">
+                  <a href="{% url 'about' %}" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'blog' %}" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'batch' %}" class="nav-link">Upcoming Batch</a>
+              </li>
+          </ul>
+      
+          <!-- Logout button aligned to the right -->
+          <ul class="navbar-nav ml-auto">
+           
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+						<span class="nav-link">
+							<i class="fas fa-user"></i>  {{ user.username }}
+						</span>
+					</li>
+                  <li class="nav-item">
+                      <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                  </li>
+              {% endif %}
+          </ul>
+      </div>
+      
+	    </div>
+	  </nav>
+		
+		<section class="ftco-section ftco-no-pt ftc-no-pb">
+			<div class="container">
+				<div class="row d-flex">
+					<div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
+						<div class="img" style="background-image: url({% static 'images/about.jpg'%});"></div>
+					</div>
+					<div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
+          	<p>  <br>
+                Established in 2024, Fly High Study Abroad Pvt. Ltd. has emerged as a leading name in overseas
+                education consultancy. Headquartered in Kerala, India, we are guided by our visionary founder 
+                and Managing Director, Mr. Rajesh Kapoor, an esteemed educationist, author, motivational speaker, 
+                and philanthropist. Our mission is to offer comprehensive study abroad facilitation services that
+                 empower students to achieve their international academic goals. br
+                We proudly represent over 500 prestigious Universities and Colleges across 25+ countries, providing
+                 our clients with access to world-class educational opportunities. With branches and associate
+                  offices spread across major Indian cities and several international locations, Fly High Study 
+                  Abroad ensures that our services are within reach for aspiring students from all corners. <br>
+                At Fly High Study Abroad, we have built our reputation on the pillars of quality and reliability.
+                 Our team of highly skilled professionals, with extensive international exposure, is dedicated to 
+                 guiding students through every step of their study abroad journey. From counseling and admissions 
+                 to visa assistance and pre-departure orientations, we offer end-to-end support to ensure a smooth
+                  transition for our students. <br>
+                Our success is driven by our commitment to excellence, continuous staff development, and the
+                 integration of cutting-edge technology. Above all, we adhere to a “student-first” approach, 
+                 ensuring that the needs and aspirations of our clients are always our top priority. <br>
+
+<h3>> Core Values We Cherish:</h3> <br>
+<ul>
+<li>Transparency</li> <br>
+<li>Reliability</li> <br>
+<li>Accountability</li> <br>
+<li>Integrity</li> <br>
+<li>Passion</li> <br>
+<li>Teamwork</li> <br>
+</ul>
+<h3>Our Vision:</h3> <hr><br>
+    To be a dynamic and innovative overseas education facilitator, setting the highest standards in the industry and
+    aligning with the growing aspirations of our clients and partner institutions globally. We strive to foster a 
+    culture of excellence that empowers students to achieve phenomenal success in their academic and professional 
+     endeavors. <br>
+     Join Fly High Study Abroad and embark on a journey towards a bright and successful international education 
+      experience. Together, we will navigate the path to your academic dreams and career aspirations. <br><br><hr><br><br></p></div>
+				</div>
+			</div>
+		</section>
+		
+
+		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(static/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-2 d-flex">
+    			<div class="col-md-6 align-items-stretch d-flex">
+    				<div class="img img-video d-flex align-items-center" style="background-image: url({% static 'images/thumbnail.png' %});">
+    					<div class="video justify-content-center">
+								<a href="{%static 'images/fhv.mp4'%}" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+									<span class="ion-ios-play"></span>
+		  					</a>
+							</div>
+    				</div>
+    			</div>
+          <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
+            <h2 class="mb-4">FLy High</h2>
+            <p>Fly High Study Abroad" is your gateway to transformative global education experiences. We specialize in crafting personalized study abroad programs that cater to the diverse academic and cultural interests of students worldwide. Whether you're seeking to immerse yourself in a new language, explore cutting-edge research opportunities, or delve into a rich tapestry of global cultures, Fly High Study Abroad ensures a seamless journey from planning to realization.</p>
+            <p>Our expert team of advisors and tutors is committed to supporting your academic success and personal growth every step of the way, providing unparalleled guidance and resources to maximize your international learning adventure. Join us at Fly High Study Abroad and embark on a life-changing educational experience that expands your horizons and shapes your future.</p>
+          </div>
+        </div>	
+    		<div class="row d-md-flex align-items-center justify-content-center">
+    			<div class="col-lg-12">
+    				<div class="row d-md-flex align-items-center">
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		            	<div class="icon"><span class="flaticon-doctor"></span></div>
+		              <div class="text">
+		                <strong class="number" data-number="18">0</strong>
+		                <span>Tutor</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		            	<div class="icon"><span class="flaticon-doctor"></span></div>
+		              <div class="text">
+		                <strong class="number" data-number="401">0</strong>
+		                <span>Students</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		            	<div class="icon"><span class="flaticon-doctor"></span></div>
+		              <div class="text">
+		                <strong class="number" data-number="95">0</strong>
+		                <span>Courses</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		            	<div class="icon"><span class="flaticon-doctor"></span></div>
+		              <div class="text">
+		                <strong class="number" data-number="50">0</strong>
+		                <span>Awards Won</span>
+		              </div>
+		            </div>
+		          </div>
+	          </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section testimony-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <h2 class="mb-4">Student Says About Us</h2>
+            <p>Students rave about us on our study abroad website! Discover why they love our tailored programs, 
+				stellar support services, and unforgettable experiences. From personalized guidance to cultural immersion,
+				 we ensure every student thrives academically and personally.
+				 Join our global community and embark on a life-changing educational journey with us</p>
+          </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel">
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/student1.jpeg' %})">
+                  </div>
+                  <div class="text ml-2">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Studying abroad with Flyhigh dtudy abroad was transformative! The support from faculty was incredible, and I felt truly immersed in the local culture.</p>
+                    <p class="name">Henry Dee</p>
+                    <span class="position">Canada</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/studentG1.jpeg' %})">
+                  </div>
+                  <div class="text ml-2">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>I can't recommend Flyhigh study abroad enough! The program was well-organized, and I made lifelong friends from around the world.</p>
+                    <p class="name">Mark Huff</p>
+                    <span class="position">Australia</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/student2.jpeg' %})">
+                  </div>
+                  <div class="text ml-2">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>My time with Flyhigh study abroad exceeded all expectations. The academic rigor combined with practical experiences enriched my learning journey.</p>
+                    <p class="name">Ken Bosh</p>
+                    <span class="position">United States</span>
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/studentG2.jpeg' %})">
+                  </div>
+                  <div class="text ml-2">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Choosing flyhigh was the best decision I made. The cultural excursions and networking opportunities were invaluable.</p>
+                    <p class="name">Ken Bosh</p>
+                    <span class="position">America</span>
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/student3.jpeg' %})">
+                  </div>
+                  <div class="text ml-2">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>The staff at flyhigh went above and beyond to ensure my safety and comfort. I felt supported every step of the way.</p>
+                    <p class="name">Ken Bosh</p>
+                    <span class="position">Italy</span>
+                  </div>
+                </div>
+              </div>
+			  <div class="item">
+                <div class="testimony-wrap d-flex">
+                  <div class="user-img mr-4" style="background-image: url({% static 'images/studentG3.jpeg' %})">
+                  </div>
+                  <div class="text ml-2">
+                  	<span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                    <p>Thanks to flyhigh, I gained a global perspective that will benefit my career. I'm grateful for the friendships and memories made during my time abroad</p>
+                    <p class="name">Ken Bosh</p>
+                    <span class="position">France</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+		<section class="ftco-gallery">
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+					<div class="col-md-3 ftco-animate">
+						<a href="{% static 'images/image_1.jpg'%}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static 'images/course-1.jpg'%});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="{% static 'images/image_2.jpg'%}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static 'images/image_2.jpg'%});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="{% static 'images/image_3.jpg'%}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static 'images/image_3.jpg'%});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+					<div class="col-md-3 ftco-animate">
+						<a href="{% static 'images/image_4.jpg'%}" class="gallery image-popup img d-flex align-items-center" style="background-image: url({% static 'images/image_4.jpg'%});">
+							<div class="icon mb-4 d-flex align-items-center justify-content-center">
+    						<span class="icon-instagram"></span>
+    					</div>
+						</a>
+					</div>
+        </div>
+    	</div>
+    </section>
+
+		
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+                <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Fly high mavelikkara,allapuzha ,kerala,690XXX, india</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+XXXXXXX46</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">flyhighstudyabroad@email.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/blog1.jpeg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{%url 'blog2'%}">Study Abroad Information Session</p>
+					<div class="d-flex align-items-center mt-auto"></a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 25, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-5 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/blog2.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{%url 'blog2'%}">Virtual Study Abroad Fair </a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 20, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'home'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Home</a></li>
+                <li><a href="{%url 'about'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- About</a></li>
+                <li><a href="{%url 'testdata'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Test Data</a></li>
+                <li><a href="{%url 'test_center'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Test Center</a></li>
+				<li><a href="{%url 'batch'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Upcomming Batch</a></li>
+                <li><a href="{%url 'contact'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Contact</a></li>
+              </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">FlyHigh</h2>
+				<p>FlyHigh is your trusted partner for study abroad opportunities. We provide comprehensive information on educational programs, application processes, and scholarships to help you embark on your international education journey.</p>
+			 
+            </div>
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Copyright © 2024 FlyHigh Study Abroad Pvt Ltd, All rights reserved Website Design And Development – <i class="icon-heart" aria-hidden="true"></i> by S4 BCA GROUP-1</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js'%}"></script>
+    <script src="{% static 'js/scrollax.min.js'%}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+    
+  </body>
+</html>

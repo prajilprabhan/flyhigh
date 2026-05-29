@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+{%load static%}
+
+<html lang="en">
+  <head>
+    <title>Fly High-Study Abroad</title>
+    <link rel="icon" href="{% static 'images/hh.jpeg' %}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="shortcut icon" href="#">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{%static 'css/open-iconic-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/aos.css'%}">
+
+    <link rel="stylesheet" href="{%static 'css/ionicons.min.css'%}">
+    
+    <link rel="stylesheet" href="{%static 'css/flaticon.css'%}">
+    <link rel="stylesheet" href="{%static 'css/icomoon.css'%}">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+  </head>
+  <body>
+    <div class="bg-top navbar-light">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
+    			<div class="col-md-4 d-flex align-items-center py-4">
+    				<a class="navbar-brand" href="index.html">Fly High <span style="text-align: center;">Study Abroad</span></a>
+    			</div>
+	    		<div class="col-lg-8 d-block">
+		    		<div class="row d-flex">
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+					    	<div class="text">
+					    		<span>Email</span>
+						    	<span>flyhighstudyabroad@email.com</span>
+						    </div>
+					    </div>
+					    <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+					    	<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <div class="text">
+						    	<span>Call</span>
+						    	<span>Call Us: + XXXXXXX46</span>
+						    </div>
+					    </div>
+					    <div class="col-md topper d-flex align-items-center justify-content-end">    	<p class="mb-0">
+                <select id="navigation" name="navigation" onchange="location = this.value;"  class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                  <option value="" disabled selected>----Test----</option>
+                  <option value="{% url 'testdata' %}">Test Details</option>
+                  <option value="{% url 'examreg' %}">Exam Registration</option>
+                  <option value="{%url 'test_center'%}"><span>Test Center</span></option>
+                  <option value="{%url 'course_materials'%}"><span>Course materials</span></option>
+                </select>
+
+                  </p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	     
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item ">
+                  <a href="{% url 'home' %}" class="nav-link pl-0">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'about' %}" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'blog' %}" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'batch' %}" class="nav-link">Upcoming Batch</a>
+              </li>
+          </ul>
+      
+          <!-- Logout button aligned to the right -->
+          <ul class="navbar-nav ml-auto">
+              {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+						<span class="nav-link">
+							<i class="fas fa-user"></i>  {{ user.username }}
+						</span>
+					</li>
+                  <li class="nav-item">
+                      <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                  </li>
+              {% endif %}
+          </ul>
+      </div>
+      
+	    </div>
+	  </nav>
+      <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg'%});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">| Course Materials</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{%url 'home'%}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Course Materials<i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <ul class="list-group">
+                {% for obj in obj %}
+                <li class="list-group-item mb-4">
+                    <h1 class="display-4 text-center"><u>{{ obj.name }}</u></h1>
+
+                    <div class="mt-3">
+                        <h2>Description</h2>
+                        <p>{{ obj.description }}</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <h2>Textbook</h2>
+                        <a href="{{ obj.textbooks.url }}" class="btn btn-primary">Download Textbook</a>
+                    </div>
+
+                    <div class="mt-3">
+                        <h2>Video Tutorial</h2>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <video class="embed-responsive-item" controls>
+                                <source src="{{ obj.video_tutorial.url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h5>Date Created</h5>
+                        <p>{{ obj.date_created }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Right Sidebar - Vertical Tabs for Exam Tips -->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Exam Tips</h4>
+                </div>
+                <div class="card-body">
+                    <div class="nav flex-column nav-pills" id="examTab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="tip1-tab" data-toggle="pill" href="#tip1" role="tab" aria-controls="tip1" aria-selected="true">Tip 1</a>
+                        <a class="nav-link" id="tip2-tab" data-toggle="pill" href="#tip2" role="tab" aria-controls="tip2" aria-selected="false">Tip 2</a>
+                        <a class="nav-link" id="tip3-tab" data-toggle="pill" href="#tip3" role="tab" aria-controls="tip3" aria-selected="false">Tip 3</a>
+                    </div>
+
+                    <div class="tab-content mt-3" id="examTabContent">
+                        <div class="tab-pane fade show active" id="tip1" role="tabpanel" aria-labelledby="tip1-tab">
+                            <h5>Tip 1</h5>
+                            <p>Start your revision early to avoid last-minute cramming.</p>
+                        </div>
+                        <div class="tab-pane fade" id="tip2" role="tabpanel" aria-labelledby="tip2-tab">
+                            <h5>Tip 2</h5>
+                            <p>Practice past exam papers for better preparation.</p>
+                        </div>
+                        <div class="tab-pane fade" id="tip3" role="tabpanel" aria-labelledby="tip3-tab">
+                            <h5>Tip 3</h5>
+                            <p>Take regular breaks while studying to stay refreshed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+                <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Fly high mavelikkara,allapuzha ,kerala,690XXX, india</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+XXXXXXX46</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">flyhighstudyabroad@email.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/blog1.jpeg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{%url 'blog2'%}">Study Abroad Information Session</p>
+					<div class="d-flex align-items-center mt-auto"></a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 25, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-5 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/blog2.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="{%url 'blog2'%}">Virtual Study Abroad Fair </a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> June 20, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'home'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Home</a></li>
+                <li><a href="{%url 'about'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- About</a></li>
+                <li><a href="{%url 'testdata'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Test Data</a></li>
+                <li><a href="{%url 'test_center'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Test Center</a></li>
+				<li><a href="{%url 'batch'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Upcomming Batch</a></li>
+                <li><a href="{%url 'contact'%}"><span class="ion-ios-arrow-round-forward mr-2"></span>- Contact</a></li>
+              </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">FlyHigh</h2>
+				<p>FlyHigh is your trusted partner for study abroad opportunities. We provide comprehensive information on educational programs, application processes, and scholarships to help you embark on your international education journey.</p>
+
+            </div>
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Copyright © 2024 FlyHigh Study Abroad Pvt Ltd, All rights reserved Website Design And Development – <i class="icon-heart" aria-hidden="true"></i> by S4 BCA GROUP-1</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js'%}"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js'%}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js'%}"></script>
+<script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+<script src="{% static 'js/aos.js'%}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js"></script>
+<script src="{% static 'js/scrollax.min.js'%}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js'%}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+  
+</body>
+</html>
