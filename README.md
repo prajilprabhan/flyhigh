@@ -84,8 +84,9 @@ FlyHigh aims to streamline educational consultancy services by providing student
 Add screenshots of your application here.
 
 ```markdown
-![Home Page](images/home.png)
-![Course Page](images/courses.png)
+![Home Page](ss1.png)
+![Countries](ss2.png)
+![Admin Page](ss3.png)
 ```
 
 ---
